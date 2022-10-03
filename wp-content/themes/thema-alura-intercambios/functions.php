@@ -5,7 +5,7 @@
 */
 function alura_intercambios_registrando_menu() {
     register_nav_menu(
-        'menu-principal',
+        'menu-navegacao',
         'Menu Principal',
     );
 }

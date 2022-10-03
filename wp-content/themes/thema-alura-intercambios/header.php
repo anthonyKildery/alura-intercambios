@@ -10,15 +10,21 @@
     <link rel="stylesheet" href=" <?= get_template_directory_uri() . '/css/' . $estiloPagina ?> ">
     <link rel="stylesheet" href=" <?= get_template_directory_uri() . '/css/footer.css' ?> ">
     <title> <?php bloginfo( 'name' ); ?> </title>
-    <?= wp_head() ?>
+    <?= wp_head(); ?>
 </head>
-<body>
+<body <?= body_class(); ?> >
     <?php 
-        
-        the_custom_logo();
+    _e( ' <header class="site-header"> ' );
+        _e( ' <div class="container-alura"> ' );
+            the_custom_logo();
 
-        wp_nav_menu(
-            array(
-                'menu' => 'menu-principal'
-            )
-        );
+            _e( ' <nav> ' );
+                wp_nav_menu(
+                    array(
+                        'menu'      => 'menu-navegacao',
+                        'menu_id'   => 'menu-principal',
+                    )
+                );
+            _e( ' </nav> ' );
+        _e( ' </div> ' );
+    _e( ' </header> ' );
