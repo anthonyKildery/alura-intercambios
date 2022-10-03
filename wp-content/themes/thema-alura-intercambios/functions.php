@@ -1,5 +1,19 @@
 <?php
 
+function alura_intercambios_registrando_post_costumizado() {
+    register_post_type(
+        'destinos',
+        array(
+            'labels'            =>      array( 'name' => 'Destinos' ),
+            'public'            =>      true,
+            'menu_position'     =>      2,
+            'menu_icon'         =>      'dashicons-admin-site',
+            'supports'          =>      array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+        )
+    );
+}
+add_action( 'init', 'alura_intercambios_registrando_post_costumizado' );
+
 /*
     add_theme_support:  adiciona fuções para o admin por imagems no site
 */
