@@ -1,5 +1,6 @@
 <?php
 /*
+    container-alura formulario-pesquisa-paises
     main -> page-destinos
         ul -> lista-destinos container-alura
             li -> col-md-3 destinos
@@ -8,9 +9,30 @@
 
 $estiloPagina = 'destinos.css';
 require_once 'header.php';
+$paises = get_terms( array( 'taxonomy' => 'paises' ) );
 
-$args = array( 'post_type' => 'destinos' );
+$paisSelecionadoURL = [array(
+    'taxonomy' => 'paises',
+    'field' => 'name',
+    'terms' => $_GET['paises'],
+) ];
+
+$args = array(
+    'post_type' => 'destinos',
+    'tax_query' => $paisSelecionadoURL,
+);
 $query = new WP_Query( $args );
+
+_e( ' <form action="#" class="container-alura formulario-pesquisa-paises"> ');
+    _e( ' <h2>Pesquise os nossos destinos</h2> ');
+    _e( ' <select name="paises" id="paises"> ');
+        _e( ' <option value="">Todos</option> ');
+        foreach( $paises as $pais ):    ?>
+            <option value="<?= $pais -> name ?>"><?= $pais -> name ?></option>
+<?php   endforeach;
+    _e( ' </select> ');
+    _e( ' <input type="submit" value="Pesquisar"> ');
+_e( ' </form> ');
 
 if( $query -> have_posts() ):
     _e( ' <main class="page-destinos"> ' );
