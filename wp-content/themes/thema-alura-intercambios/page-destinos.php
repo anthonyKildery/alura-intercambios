@@ -11,15 +11,17 @@ $estiloPagina = 'destinos.css';
 require_once 'header.php';
 $paises = get_terms( array( 'taxonomy' => 'paises' ) );
 
-$paisSelecionadoURL = [array(
-    'taxonomy' => 'paises',
-    'field' => 'name',
-    'terms' => $_GET['paises'],
-) ];
+if( !empty( $_GET['paises'] ) ) {
+    $paisSelecionadoURL = [array(
+        'taxonomy' => 'paises',
+        'field' => 'name',
+        'terms' => $_GET['paises'],
+    ) ];
+}
 
 $args = array(
     'post_type' => 'destinos',
-    'tax_query' => $paisSelecionadoURL,
+    'tax_query' => !empty( $_GET['paises'] ) ? $paisSelecionadoURL : '',
 );
 $query = new WP_Query( $args );
 
@@ -28,7 +30,10 @@ _e( ' <form action="#" class="container-alura formulario-pesquisa-paises"> ');
     _e( ' <select name="paises" id="paises"> ');
         _e( ' <option value="">Todos</option> ');
         foreach( $paises as $pais ):    ?>
-            <option value="<?= $pais -> name ?>"><?= $pais -> name ?></option>
+            <option value="<?= $pais -> name ?>" 
+            <?= !empty( $_GET['paises'] ) && $_GET['paises'] === $pais -> name ? 'selected' : '' ?> >
+                <?= $pais -> name ?>
+            </option>
 <?php   endforeach;
     _e( ' </select> ');
     _e( ' <input type="submit" value="Pesquisar"> ');
