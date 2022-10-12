@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 6.0.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-05-24 00:53:20+0000\n"
+"PO-Revision-Date: 2022-10-10 15:52:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
 "Language: pt_BR\n"
 "Project-Id-Version: WordPress - 6.0.x - Development - Administration\n"
 
@@ -33,6 +33,16 @@ msgstr "America/Sao_Paulo"
 #, gp-priority: high
 msgid "Continue"
 msgstr "Continuar"
+
+#. translators: 1: WordPress version number, 2: Link to update WordPress
+#: wp-admin/about.php:439
+msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
+msgstr "Importante! Sua versão do WordPress (%1$s) irá parar de receber atualizações de segurança em breve. Para manter seu site seguro, <a href=\"%2$s\">atualize para a mais recente versão do WordPress</a>."
+
+#. translators: 1: WordPress version number, 2: Link to update WordPress
+#: wp-admin/about.php:436
+msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
+msgstr "Importante! Sua versão do WordPress (%1$s) não é mais suportada e você não receberá mais atualizações de segurança para seu site. Para manter seu site seguro, <a href=\"%2$s\">atualize para a versão mais recente do WordPress</a>."
 
 #: wp-admin/about.php:359
 msgid "https://make.wordpress.org/core/2022/05/03/wordpress-6-0-field-guide/"
@@ -10953,9 +10963,9 @@ msgid ""
 "%%s"
 msgstr ""
 "Olá,\n"
-"Você foi convidada para se juntar ao '%1$s' em\n"
+"Você foi convidado(a) para se juntar ao '%1$s' em\n"
 "%2$s na função de %3$s.\n"
-"Se você não quer se juntar a este site, ignore este e-mail. Este convite espira em alguns dias.\n"
+"Se você não quer se juntar a este site, ignore este e-mail. Este convite expirará em alguns dias.\n"
 "\n"
 "Clique no link para ativar a conta:\n"
 "%%s"
