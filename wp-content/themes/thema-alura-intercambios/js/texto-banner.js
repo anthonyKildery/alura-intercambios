@@ -1,4 +1,7 @@
-console.log('data');
+/*
+    Version: v1.0.1
+*/
+console.log( data )
 var options = {
     strings: [ data.texto_1, data.texto_2 ],
     typeSpeed: 80,
